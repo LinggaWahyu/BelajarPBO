@@ -10,15 +10,22 @@ package Modul3;
  * @author equinox
  */
 public class Latihan2 {
-    private int[] bilangan_baru;
+    private int[] bilangan_baru, bilangan;
     private double[] bilangan_kali;
 
+    public int[] getBilangan() {
+        return bilangan;
+    }
+
+    public void setBilangan(int[] bilangan) {
+        this.bilangan = bilangan;
+    }
+    
     public void cetak(String a) {
         System.out.println(a);
     }
     
-    public void cetakArrayBaru(int[] bilangan) {
-        System.out.println("Nilai bilangan Integer setelah di ubah = ");
+    public void cetak(int[] bilangan) {
         for (int i = 0; i < bilangan.length; i++) {
             if (i == 0) {
                 System.out.print(bilangan[i]);
@@ -57,10 +64,13 @@ public class Latihan2 {
         }
     }
     
-    public void cetakArrayKali(double[] bilangan) {
-        System.out.print("\nNilai bilangan Integer setelah di kali = ");
-        for (int i = 0; i < bilangan.length; i++) {
-            System.out.print(bilangan[i] + " ");
+    public void cetak(double[] bilangan) {
+       for (int i = 0; i < bilangan.length; i++) {
+            if (i == 0) {
+                System.out.print(bilangan[i]);
+            } else {
+                System.out.print(", " + bilangan[i]);
+            }
         }
     }
 }

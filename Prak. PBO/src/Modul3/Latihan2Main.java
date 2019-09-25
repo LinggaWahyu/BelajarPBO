@@ -15,9 +15,17 @@ public class Latihan2Main {
         
         Latihan2 lt = new Latihan2();
         
-        lt.setBilangan_baru(bilangan, 5, 1);
-        lt.cetakArrayBaru(lt.getBilangan_baru());
+        lt.cetak("Deret bilangan awal");
+        lt.setBilangan(bilangan);
+        lt.cetak(lt.getBilangan());
         
+        lt.cetak("\n\nDeret bilangan setelah diganti");
+        lt.setBilangan_baru(bilangan, 5, 1);
+        lt.cetak(lt.getBilangan_baru());
+        
+        lt.cetak("\n\nDeret bilangan setelah dikali");
+        lt.setBilangan_kali(lt.getBilangan_baru(), 0.5);
+        lt.cetak(lt.getBilangan_kali());
         } 
     }
 
