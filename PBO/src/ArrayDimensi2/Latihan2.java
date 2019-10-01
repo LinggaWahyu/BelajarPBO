@@ -106,5 +106,13 @@ public class Latihan2 {
         }
     }
     
+    public void hapus(){
+        bilangan = 0;
+        penjumlahan = 0;
+        index = null;
+        GanjilGenap = null;
+        
+    }
+    
     
 }
