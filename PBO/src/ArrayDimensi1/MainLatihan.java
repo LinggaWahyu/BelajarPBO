@@ -31,5 +31,7 @@ public class MainLatihan {
         lt.tampil("\n\nKeterangan ganjil/genap deret bilangan : ");
         lt.setGanjilGenap(bilangan);
         lt.tampil(lt.getGanjilGenap());
+        lt.hapus();
+        bilangan = null;
     }
 }
