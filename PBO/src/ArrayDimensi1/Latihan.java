@@ -16,6 +16,7 @@ public class Latihan {
 
     public void tampil(String a) {
         System.out.println(a);
+        a = null;
     }
     
     public void tampil(int[] a) {
@@ -26,12 +27,14 @@ public class Latihan {
                 System.out.print(", " + a[i]);
             }
         }
+        a = 0;
     }
     
     public void tampil(String[] a) {
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
         }
+        a = null;
     }
     
     public int[] getBilangan() {
@@ -40,6 +43,7 @@ public class Latihan {
 
     public void setBilangan(int[] bilangan) {
         this.bilangan = bilangan;
+        bilangan = 0;
     }
 
     public int[] getPenjumlahan() {
@@ -53,6 +57,8 @@ public class Latihan {
         for (int i = 0; i < bilangan.length; i++) {
             penjumlahan[i] = bilangan[i] + angka;
         }
+        bilangan = 0;
+        angka = 0;
     }
 
     public String[] getIndex() {
@@ -70,6 +76,7 @@ public class Latihan {
             kata = angka + " terdapat pada index " + indeks;
             this.index[i] = kata; 
         }
+        bilangan = 0;
     }
 
     public String[] getGanjilGenap() {
@@ -92,5 +99,13 @@ public class Latihan {
                 this.GanjilGenap[i] = kata;
             }
         }
+        bilangan = null;
+    }
+    
+    public void hapus(){
+        bilangan = 0;
+        penjumlahan = 0;
+        GanjilGenap = null;
+        index = null;
     }
 }
