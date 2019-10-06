@@ -66,4 +66,11 @@ public class Latihan1 {
             }
         }
     }
+    
+    public void hapus() {
+        rata_rata = 0;
+        nilai_max = 0;
+        nilai_min = 0;
+        posisi = 0;
+    }
 }

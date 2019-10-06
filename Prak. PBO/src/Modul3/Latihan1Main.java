@@ -27,5 +27,8 @@ public class Latihan1Main {
         int angka = -3;
         lt.setPosisi(bilangan, angka);
         lt.cetak("Angka " + angka + " terdapat pada index " + lt.getPosisi());
+        
+        lt.hapus();
+        bilangan = null;
     }
 }
