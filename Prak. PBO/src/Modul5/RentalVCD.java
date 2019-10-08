@@ -5,29 +5,72 @@
  */
 package Modul5;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import sun.nio.cs.StreamDecoder;
+
 /**
  *
  * @author equinox
  */
 public class RentalVCD extends DaftarFilm {
+    private String input;
+    private int JmlFilm;
+    
+    BufferedReader data = new BufferedReader(new InputStreamReader(System.in));
     
     protected void cetak(String a) {
         System.out.print(a);
     }
 
-    protected void setArray(int JumlahFilm) {
-        super.Film = new String[JumlahFilm][6];
+    protected int getJmlFilm() {
+        return JmlFilm;
+    }
+
+    protected void setJmlFilm() throws IOException {
+        this.cetak("Masukkan Jumlah Film : ");
+        this.JmlFilm = Integer.parseInt(data.readLine());
     }
     
-    protected void displayFilm() {
-        for (int i = 0; i < super.Film.length; i++) {
-            this.cetak("\n\nData Film ke-" + (i+1));
-            this.cetak("\nJudul      : " + super.Film[i][0]);
-            this.cetak("\nNama Aktor : " + super.Film[i][1]);
-            this.cetak("\nSutradara  : " + super.Film[i][2]);
-            this.cetak("\nPublisher  : " + super.Film[i][3]);
-            this.cetak("\nKategori   : " + super.Film[i][4]);
-            this.cetak("\nStok       : " + super.Film[i][5]);
+    protected void Kategori() {
+        
+    }
+    
+    protected void InsertFilm(int JumlahFilm) throws IOException {
+        for (int i = 1; i <= JumlahFilm; i++) {
+            this.cetak("====================================");
+            this.cetak("\nMasukkan Data Film ke-" + i);
+            this.cetak("\nJudul\t\t: ");
+            input = data.readLine();
+            super.setJudulFilm(input);
+            this.cetak("Nama Aktor\t: ");
+            input = data.readLine();
+            super.setNamaAktor(input);
+            this.cetak("Sutradara\t: ");
+            input = data.readLine();
+            super.setSutradara(input);
+            this.cetak("Publisher\t: ");
+            input = data.readLine();
+            super.setPublisher(input);
+            this.cetak("Kategori\t: ");
+            input = data.readLine();
+            super.setKategori(input);
+            this.cetak("Stok\t\t: ");
+            input = data.readLine();
+            super.setStok(input);
+            
+            this.cetak("\nData Film ke-" + i);
+            this.displayFilm();
         }
+    }
+
+    protected void displayFilm() {
+        this.cetak("\nJudul      : " + super.getJudulFilm());
+        this.cetak("\nNama Aktor : " + super.getNamaAktor());
+        this.cetak("\nSutradara  : " + super.getSutradara());
+        this.cetak("\nPublisher  : " + super.getPublisher());
+        this.cetak("\nKategori   : " + super.getKategori());
+        this.cetak("\nStok       : " + super.getStok() + "\n");
     }
 }

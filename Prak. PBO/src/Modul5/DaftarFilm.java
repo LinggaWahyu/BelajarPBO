@@ -11,54 +11,61 @@ package Modul5;
  */
 public class DaftarFilm {
 
-    protected String[][] Film;
     private String JudulFilm, NamaAktor, Sutradara, Publisher, Kategori, stok;
         
     protected String getJudulFilm() {
         return JudulFilm;
     }
 
-    protected void setJudulFilm(int index, String JudulFilm) {
-        Film[index][0] = JudulFilm;
+    protected void setJudulFilm(String JudulFilm) {
+        this.JudulFilm = JudulFilm;
     }
 
     protected String getNamaAktor() {
         return NamaAktor;
     }
 
-    protected void setNamaAktor(int index, String NamaAktor) {
-        Film[index][1] = NamaAktor;
+    protected void setNamaAktor(String NamaAktor) {
+        this.NamaAktor = NamaAktor;
     }
 
     protected String getSutradara() {
         return Sutradara;
     }
 
-    protected void setSutradara(int index, String Sutradara) {
-        Film[index][2] = Sutradara;
+    protected void setSutradara(String Sutradara) {
+        this.Sutradara = Sutradara;
     }
 
     protected String getPublisher() {
         return Publisher;
     }
 
-    protected void setPublisher(int index, String Publisher) {
-        Film[index][3] = Publisher;
+    protected void setPublisher(String Publisher) {
+        this.Publisher = Publisher;
     }
 
     protected String getKategori() {
         return Kategori;
     }
 
-    protected void setKategori(int index, String Kategori) {
-        Film[index][4] = Kategori;
+    protected void setKategori(String Kategori) {
+        if (Kategori.equals("SU")) {
+            this.Kategori = "Semua Umur";
+        } else if (Kategori.equals("A")) {
+            this.Kategori = "Anak-Anak";
+        } else if (Kategori.equals("D")) {
+            this.Kategori = "Dewasa";
+        } else if (Kategori.equals("R")) {
+            this.Kategori = "Remaja";
+        }
     }
 
     protected String getStok() {
         return stok;
     }
 
-    protected void setStok(int index, String stok) {
-        Film[index][5] = stok;
+    protected void setStok(String stok) {
+        this.stok = stok;
     }
 }
