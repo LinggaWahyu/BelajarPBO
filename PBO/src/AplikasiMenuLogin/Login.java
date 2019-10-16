@@ -29,7 +29,7 @@ public class Login {
         
         Session.setStatusLogin(username, password);
         
-        if (Session.getStatusLogin().equals("aktif")) {
+        if (Session.getStatusLogin() == "aktif") {
             new Menu();
         } else {
             Session.pembatas();
