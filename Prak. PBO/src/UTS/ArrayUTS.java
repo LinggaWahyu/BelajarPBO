@@ -10,66 +10,56 @@ package UTS;
  * @author equinox
  */
 public class ArrayUTS {
-    int[][] Deret;
-    int[] Cari;    
-    String[][] Indeks;
-    String[] Index;
 
-    public int[][] getDeret() {
-        return Deret;
+    String[] C;
+
+    public String[] getC() {
+        return C;
     }
 
-    public void setDeret(int[][] Deret) {
-        this.Deret = Deret;
-    }
+    public void setC(int[][] A, int[] B) {
+        this.C = new String[B.length];
 
-    public String[][] getIndeks() {
-        return Indeks;
-    }
-
-    public void setIndeks(int[][] bilangan) {
-        this.Indeks = new String[bilangan.length][bilangan[0].length];
-        
-        String angka, baris, kolom, kata;
-        for (int i = 0; i < bilangan.length; i++) {
-            for (int j = 0; j < bilangan[i].length; j++) {
-                angka = String.valueOf(bilangan[i][j]);
-                baris = String.valueOf(i);
-                kolom = String.valueOf(j);
-                kata = angka + " terdapat pada baris " + baris + " kolom " + kolom;
-                this.Indeks[i][j] = kata;
+        String angka, baris, kolom, kata, kata2;
+        int data = 0;
+        for (int i = 0; i < A.length; i++) {
+            for (int j = 0; j < A[i].length; j++) {
+                for (int k = 0; k < B.length; k++) {
+                    if (A[i][j] == B[k]) {
+                        if (C[k] != null && data != 0) {
+                            angka = String.valueOf(B[k]);
+                            baris = String.valueOf(i);
+                            kolom = String.valueOf(j);
+                            kata2 = C[k];
+                            kata = C[k] + ", baris " + baris + " kolom " + kolom;
+                            C[k] = kata;
+                            data = 0;
+                        } else if (data == 0) {
+                            angka = String.valueOf(B[k]);
+                            baris = String.valueOf(i);
+                            kolom = String.valueOf(j);
+                            kata = "Angka " + angka + " ditemukan pada baris " + baris + " kolom " + kolom;
+                            C[k] = kata;
+                            data++;
+                        }
+                    } else if (A[i][j] != B[k]) {
+                        if (C[k] == null) {
+                            angka = String.valueOf(B[k]);
+                            baris = String.valueOf(i);
+                            kolom = String.valueOf(j);
+                            kata = "Angka " + angka + " tidak di temukan";
+                            C[k] = kata;
+                        }
+                    }
+                }
             }
         }
     }
 
-    public int[] getCari() {
-        return Cari;
-    }
-
-    public void setCari(int angka) {
-        this.Cari = Cari;
-    }
-
-    public String[] getIndex() {
-        return Index;
-    }
-
-    public void setIndex(int[] deret) {
-        this.Index = new String[deret.length];
-        
-        String angka, indeks, kata;
-        for (int i = 0; i < deret.length; i++) {
-            angka = String.valueOf(deret[i]);
-            indeks = String.valueOf(i);
-            kata = angka + " terdapat pada index " + indeks;
-            Index[i] = kata;
-        }
-    }
-    
     public void tampil(String a) {
         System.out.println(a);
     }
-    
+
     public void tampil(int[][] a) {
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
@@ -78,7 +68,7 @@ public class ArrayUTS {
             System.out.println();
         }
     }
-    
+
     public void tampil(String[][] a) {
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < a[i].length; j++) {
@@ -87,7 +77,7 @@ public class ArrayUTS {
             System.out.println();
         }
     }
-    
+
     public void tampil(String[] a) {
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);

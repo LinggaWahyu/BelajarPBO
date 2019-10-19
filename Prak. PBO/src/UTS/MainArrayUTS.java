@@ -11,21 +11,12 @@ package UTS;
  */
 public class MainArrayUTS extends ArrayUTS {
     public static void main(String[] args) {
-        int[][] A = {{5,11},{8,9},{11,4},{4,6}};
-        int[] C = {1,2,3,4,5,6};
+        int[][] A = {{3,2,6,3},{8,5,6,8}};
+        int[] C = {9,3,10,6,11};
         
         MainArrayUTS ob = new MainArrayUTS();
         
-        ob.tampil("Nilai Matrik A :");
-        ob.setDeret(A);
-        ob.tampil(ob.getDeret());
-        
-        ob.tampil("\nBaris Kolom pada Matrik A : ");
-        ob.setIndeks(A);
-        ob.tampil(ob.getIndeks());
-        
-        ob.tampil("\nIndex pada Matrik C : ");
-        ob.setIndex(C);
-        ob.tampil(ob.getIndex());
+        ob.setC(A, C);
+        ob.tampil(ob.getC());
     }
 }
