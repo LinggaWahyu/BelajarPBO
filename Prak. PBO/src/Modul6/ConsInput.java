@@ -20,9 +20,13 @@ public class ConsInput extends ConsMahasiswa {
     protected void inputMahasiswa() {
         String YorN;
         int i = 1;
+        
+        ConsMahasiswa.setNamaUniv(JOptionPane.showInputDialog("Masukkan Nama Universitas :"));
+        super.tampil("Data Mahasiswa " + ConsMahasiswa.getNamaUniv());
+        
         while (true) {
             JOptionPane.showMessageDialog(null, "Masukkan Data Mahasiswa ke-" + i);
-            ConsMahasiswa.setNamaUniv(JOptionPane.showInputDialog("Masukkan Nama Universitas :"));
+            
             super.NIM = JOptionPane.showInputDialog("Masukkan NIM Mahasiswa : ");
             super.Nama = JOptionPane.showInputDialog("Masukkan Nama Mahasiswa : ");
             super.Alamat = JOptionPane.showInputDialog("Masukkan Alamat Mahasiswa");
@@ -30,7 +34,6 @@ public class ConsInput extends ConsMahasiswa {
 
             ConsMahasiswa ob = new ConsMahasiswa(NIM, Nama, Alamat, Jurusan);
             ob.tampil("\nData Mahasiswa ke-" + i);
-            ob.tampil("Universitas : " + ConsMahasiswa.getNamaUniv());
             ob.tampil("NIM         : " + ob.getNIM());
             ob.tampil("Nama        : " + ob.getNama());
             ob.tampil("Alamat      : " + ob.getAlamat());
