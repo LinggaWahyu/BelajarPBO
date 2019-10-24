@@ -69,5 +69,12 @@ public class ConsMahasiswa {
      protected void tampil(String a) {
         System.out.println(a);
         a = null;
-}
+    }
+    
+    protected void hapus() {
+        NIM = null;
+        Nama = null;
+        Alamat = null;
+        Jurusan = null;
+    }    
 }
