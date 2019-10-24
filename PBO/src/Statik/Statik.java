@@ -34,4 +34,9 @@ public class Statik {
         System.out.println(a);
         a = null;
     }
+    
+    protected void hapus() {
+        this.a = null;
+        this.b = null;
+    }    
 }
