@@ -58,6 +58,7 @@ public class ArrayUTS {
 
     public void tampil(String a) {
         System.out.println(a);
+        a = null;
     }
 
     public void tampil(int[][] a) {
@@ -67,6 +68,7 @@ public class ArrayUTS {
             }
             System.out.println();
         }
+        a = null;
     }
 
     public void tampil(String[][] a) {
@@ -76,11 +78,17 @@ public class ArrayUTS {
             }
             System.out.println();
         }
+        a = null;
     }
 
     public void tampil(String[] a) {
         for (int i = 0; i < a.length; i++) {
             System.out.println(a[i]);
         }
+        a = null;
     }
+    
+    public void hapus() {
+        this.C = null;    
+    }    
 }
