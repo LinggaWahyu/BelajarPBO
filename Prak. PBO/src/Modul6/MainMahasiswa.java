@@ -14,5 +14,7 @@ public class MainMahasiswa {
         ConsInput ob = new ConsInput();
         
         ob.inputMahasiswa();
+        
+        ob.hapus;
     }
 }
