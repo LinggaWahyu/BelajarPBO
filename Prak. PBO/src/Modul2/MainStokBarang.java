@@ -44,5 +44,8 @@ public class MainStokBarang {
         sb.setTotal_harga(sb.getHarga());    
     
         sb.cetak("\nTotal Harga : " + sb.getTotal_harga());
+        
+        sb.hapus();
+        
     }
 }
