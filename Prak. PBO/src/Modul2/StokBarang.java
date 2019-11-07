@@ -56,5 +56,13 @@ public class StokBarang {
     public void setHarga(int harga_satuan) {
         harga = this.getStok() * harga_satuan;
     }
+    
+    public void hapus(){
+        nama = null;
+        stok = 0;
+        harga_satuan = 0;
+        harga = 0;
+        total_harga = 0;
+    }
 }
     
